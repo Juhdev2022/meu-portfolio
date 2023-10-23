@@ -1,0 +1,143 @@
+/* Media query para telas menores, como smartphones */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.875rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+}
+
+/* Exemplo de redimensionamento de imagem */
+img {
+  max-width: 100%; /* Garante que as imagens se ajustem ao tamanho da tela */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+body {
+  font-size: 1rem;
+  margin: auto; /* Centraliza o conteúdo horizontalmente na tela */
+  padding: auto;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav li:first-child {
+  margin-left: 0; /* Remove o espaçamento à esquerda do primeiro item do menu */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Cor dos links no menu de navegação */
+}
+
+section {
+  padding: 20px; /* Espaçamento interno da seção de conteúdo */
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Estilos para o ícone do menu "sanduíche" */
+.menu-toggle {
+  display: none; /* Oculta o ícone em telas maiores */
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Media query para telas menores, como smartphones */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.875rem; /* Reduz o tamanho da fonte em telas menores */
+  }
+
+  /* Mostra o ícone do menu "sanduíche" e oculta o menu regular */
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* Oculta o menu regular em telas menores */
+  }
+
+  /* Estilos para o menu de navegação oculto */
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Estilos iniciais para telas grandes */
+.main-menu {
+  display: block;
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .main-menu {
+    display: flex;
+  }
+  .main-menu.active {
+    display: flex;
+  }
+}
+
+/* Estilos para telas menores, como smartphones */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 20px; /* Tamanho de fonte menor */
+    padding: 10px; /* Espaçamento interno menor */
+    text-align: center; /* Centraliza o texto no botão */
+  }
+  .main-menu {
+    display: none;
+  }
+  .main-menu.active {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 100%; /* Centraliza a barra horizontalmente */
+    transform: translateX(-100%);
+    width: 250px;
+    font-size: 9px; /* Tamanho de fonte menor */
+    padding: 4px 40px; /* Espaçamento interno menor */
+  }
+  .main-menu.active li {
+    margin: 10px 0; /* Espaçamento maior entre as palavras */
+    display: block;
+  }
+  .main-menu.active a {
+    text-decoration: none;
+    color: #fff; /* Cor dos links no menu móvel */
+    font-size: 14px;
+    letter-spacing: 4px;
+    padding-left: 20px;
+  }
+}
+
+.menu-toggle.active::before {
+  content: '✖'; /* Mostra um "X" quando o menu está ativo */
+}
